@@ -1,12 +1,20 @@
-title: rpi-python-octapi-calculate-pi
+title: "OctaPi: Calculate Pi"
 hero_image: images/banner.png
-description: rpi-python-octapi-calculate-pi description
-original_url: https://codeclubprojects.org/en-GB/scratch/rock-band
+description: Learn how to calculate Pi using the power of distributed computing
 theme: cc-prototype
-duration: 1 # 1, 2 or 3
+duration: 3 # 1, 2 or 3
 listed: false
 ingredient: false
-interests: "jokes/pranks, music/sound"
-technologies: "javascript python scratch, lasers more lasers 3d printing wheels, pygame, python, Raspberry Pi, scratch, SenseHAT, Sense HAT"
+interests: ""
+technologies: "python"
 steps:
-  - title: Step one
+  - title: Introduction
+  - title: What you will need
+  - title: Step one - Why is calculating π difficult?
+  - title: Step two - Calculating π - Viète's method
+  - title: Challenge
+  - title: Step three - Representing decimals on a computer
+  - title: Step four - Monte Carlo methods
+  - title: Step five - Implementing the 'dartboard' algorithm on a single standalone processor
+  - title: Step seven - Implementing the 'dartboard' algorithm on a distributed system
+  - title: Challenge
