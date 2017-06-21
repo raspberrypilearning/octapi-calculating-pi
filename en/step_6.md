@@ -1,89 +1,50 @@
-# Step three - Representing decimals on a computer
+# Step four - Monte Carlo methods
 
-Run your π approximation program using Viète's infinite product series, but this time change the loop so that it runs 100 times. You will notice that as the number of iterations goes up, the reported result gradually becomes exactly the same.
+Now we will try a **Monte Carlo** method for calculating π so that we can see how this technique compares.
 
-**Why do you think this is?**
+The Monte Carlo method we will use for computing π is called the **dartboard method**.
 
---- collapse ---
----
-title: Answer
----
-Viète's product series relies on calculating the product of many terms. This breaks down in accuracy after a while because of the accuracy with which the results can be saved by the computer. The more iterations that are used, the greater the impact of any inaccuracies caused by rounding errors.
+- A quarter circle with a radius of 1 is drawn inside in a 1x1 square.
+- Random points are generated that fall inside the square (rather like darts being thrown at a dart board).
+- The random points can be used to estimate the two areas by seeing how many fall in each section (inside or outside the circle).
+- The ratio of the number of points inside the quarter circle to the total number of points will approximately equal π/4.
+- The larger the number of randomly generated points, the more accurate the estimate of π.
 
---- /collapse ---
+![Random distribution of points in a square partitioned using a quarter circle](images/pi-30k.gif)
 
-To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You are probably already familiar with the way positive integers are stored in binary. For example, here is the number 5 (00000101) which is created by adding the place values containing a 1 together, i.e. 4 + 1.
+_By nicoguaro (Own work) [CC BY 3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons_
 
-128 | 64 | 32 | 16 | 8  | 4  | 2  | 1  |
-----|----|----|----|----|----|----|----|
-0   | 0  | 0  | 0  | 0  | 1  | 0  | 1  |
+Here is how we will determine whether a point lies inside the quarter circle:
 
-If we were to extend the binary place value headers to the _right_, they extend infinitely far with each new place value representing half the previous value:
+- We already know that the radius of the circle is 1
+- This condition is true for all points which lie inside the circle: `x² + y² < 1`, where x and y are points on the axes.
 
-2   | 1  | 1/2 | 1/4 | 1/8  | 1/16  | 1/32  | 1/64 |
-----|----|---- |---- |----  |----   |----   |----  |
-0   | 1  | 1   | 1   | 0    | 0     | 0     |  0   |
+We can show that this is true using Pythagoras' theorem.
 
-With a fixed point notation, there is a fixed amount of bits before and after the point. So in this example the number represented by 01110000 would be 1.75 which is derived from 1 + 1/2 + 1/4.
+1. We already know the `x` and `y` positions of the randomly generated point.
+1. We know that the radius of the circle is 1
+1. We need to find the **radius** or the distance of the point from x = 0, y = 0. If the radius is less than 1, the point is inside the circle.
 
-In Python, decimal numbers are represented using **floating point representation** - you may have heard them called "floats" - now you know the reason why! Floating point representation requires three things - a sign (+/-), a mantissa (the significant digits of the number) and an exponent (the power to which the number should be raised). The exponent allows the point to be moved around (hence why it is "floating") to accommodate storing a wide range of magnitudes of numbers, from the size of an atom to the mass of the sun!
+    ![Pythagoras](images/point-inside-circle.png)
 
-Suppose you have 12 bits to store our floating point number in. The first of these represents the **sign**, or whether the number is positive (0) or negative (1). The next 7 digits represent the **mantissa** - these are the significant digits which make up the number. The floating point starts off between the sign and the mantissa. The final four bits might be the **exponent** which is the power to which the mantissa should be raised, or in other words how many places to move the point to the right.
+    _Adapted from original image by nicoguaro [CC BY 3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons_
 
-S    | .  | M  |  M  |  M  |  M   |  M   |  M  |  M  | E   | E  | E  | E  |
----- |----|----|---- |---- |----  |----  |---- |---- |---- |----|----|----|
-0    |  . | 0  |  1  | 1   |  0   |  0   | 1   | 0   |  0  | 0   | 1  | 1 |
 
-- Take the sign and the mantissa - 0.0110010
-- Move the point to the right the number of places indicated by the exponent (in this case, 0011 or 3)
-- The result is 0011.0010
-- Calculate the binary numbers each side of the decimal point separately. 0011 = 3, and 0010 = 1/8 or 0.125. The number is 3.125.
+1. We can draw a right angled triangle using the information we already have. We know from Pythagoras that `r² = x² + y²`
+1. Plug in the values of `x` and `y` into the equation. In this example, `r² = 0.6² + 0.4² = 0.36 + 0.16 = 0.52`
+1. Normally we would need to take the square root of the result to get the radius. However since the circle we are comparing against has a radius of 1, we can compare our `r²` result against the circle's `r²`. Since the circle's radius is `1`, we are comparing our result to `1²` which is also `1` - so we can just skip this step altogether for circles of radius 1.
+1. If the result is less than 1, the point must be inside the circle. If it is 1 or greater, the point must be outside the circle.
+
+So we can implement this Monte Carlo method on a computer system provided we have a suitable uniform random source of values between 0.0 and 1.0 for the x and y coordinates of the points. We can write a program to generate lots of random co-ordinate points (x, y) on the unit square, and see how the length of each trial and the number of trials affects the estimated value of π.
 
 ### Test your understanding
 
-**Write the number 33.5 in this format**
---- collapse ---
----
-title: Answer
----
-S    | .  | M  |  M  |  M  |  M   |  M   |  M  |  M  | E   | E  | E  | E  |
----- |----|----|---- |---- |----  |----  |---- |---- |---- |----|----|----|
-0    |  . | 1  |  0  | 0   |  0   |  0   | 1   | 1   |  0  | 1  | 1  | 0  |
-
-- 0.1000011
-- Move the point 6 places to the right
-- 0100001.1
-- 0100001 = 32 + 1 = 33
-- .1 = 0.5
-- Result: 33.5
-
---- /collapse ---
-
-**Why can't you write the number 33.125 in this format using 12 bits?**
---- collapse ---
----
-title: Answer
----
-In the previous example we moved the floating point 6 places to the right. This meant that there was only one bit of the mantissa available to represent the fractional part of the number, so the highest precision available for the fractional part of the number was to the nearest 0.5. To represent a fractional part with greater precision would require a larger mantissa and therefore more bits to store the number in.
-
-If you do a calculation in Python where the result has a greater degree of precision than the number of bits available to store it, the number will be approximated by rounding. This is what causes the Viète program to become more and more unreliable as there are not enough bits available to store the increasingly precise value of π.
-
---- /collapse ---
-
-In Python, floating point numbers are stored in 64 bits - this is a standard double precision floating point number. The more bits you have available to store your floating point number in, the more precisely you can store the value of the number without rounding.
-
-**How many bits would you need to store an irrational number like π?**
+**Calculate whether x=0.81, y=0.62 is inside the circle**
 
 --- collapse ---
 ---
 title: Answer
 ---
-As we learnt from the definition of an **irrational number**, the decimal part is infinitely long and never repeats. We can never accurately store the value of π in a variable in Python because it would require an infinite number of bits!
-
-As an extension task, you could use the [decimal module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal) to improve the accuracy of your program. Can you achieve the 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
-
-Take a look at our [example program](code/pi_viete.py) to see an implementation of the Viète infinite product series using Python's decimal module.
-
-Using the decimal module largely removes this problem because it allows arbitrary precision (or more accurately, user defined integer precision) to be specified. The precision is still limited by the amount of memory available, in other words you can only specify finite precision: `getcontext().prec('x')`, where `x` is a finite integer.
-
+- `r² = 0.81² + 0.62² = 0.6561 + 0.3844 = 1.0405`
+- This point is not inside the circle - our condition for being inside the circle was `x² + y² < 1`
 --- /collapse ---
