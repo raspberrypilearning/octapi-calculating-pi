@@ -36,6 +36,7 @@ Suppose you have 12 bits to store our floating point number in. The first of the
 ### Test your understanding
 
 **Write the number 33.5 in this format**
+
 --- collapse ---
 ---
 title: Answer
@@ -52,6 +53,7 @@ title: Answer
 --- /collapse ---
 
 **Why can't you write the number 33.125 in this format using 12 bits?**
+
 --- collapse ---
 ---
 title: Answer
