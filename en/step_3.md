@@ -1,5 +1,7 @@
 # Step one - Why is calculating π difficult?
 
+### π is an irrational number
+
 An **irrational number** is a number that cannot be written as a simple fraction. The decimal part is infinitely long and does not repeat.
 
 Many people think that the value of π can be calculated by dividing 22/7. This technique will only ever create a number that is approximately the true value because as π is an irrational number, and by definition it cannot be expressed this way. This ratio also has no mathematical basis on the geometry of circles, it is merely an attempt to represent the true value of π using memorable integers.
