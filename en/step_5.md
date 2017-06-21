@@ -14,15 +14,11 @@ Viète's product series relies on calculating the product of many terms. This br
 
 To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You are probably already familiar with the way positive integers are stored in binary. For example, here is the number 5 (00000101) which is created by adding the place values containing a 1 together, i.e. 4 + 1.
 
-128 | 64 | 32 | 16 | 8  | 4  | 2  | 1  |
-----|----|----|----|----|----|----|----|
-0   | 0  | 0  | 0  | 0  | 1  | 0  | 1  |
+![Binary](images/binary-positive.png)
 
 If we were to extend the binary place value headers to the _right_, they extend infinitely far with each new place value representing half the previous value:
 
-2   | 1  | 1/2 | 1/4 | 1/8  | 1/16  | 1/32  | 1/64 |
-----|----|---- |---- |----  |----   |----   |----  |
-0   | 1  | 1   | 1   | 0    | 0     | 0     |  0   |
+![Binary fixed point](images/binary-fixed-point.png)
 
 With a fixed point notation, there is a fixed amount of bits before and after the point. So in this example the number represented by 01110000 would be 1.75 which is derived from 1 + 1/2 + 1/4.
 
@@ -30,9 +26,7 @@ In Python, decimal numbers are represented using **floating point representation
 
 Suppose you have 12 bits to store our floating point number in. The first of these represents the **sign**, or whether the number is positive (0) or negative (1). The next 7 digits represent the **mantissa** - these are the significant digits which make up the number. The floating point starts off between the sign and the mantissa. The final four bits might be the **exponent** which is the power to which the mantissa should be raised, or in other words how many places to move the point to the right.
 
-S    | .  | M  |  M  |  M  |  M   |  M   |  M  |  M  | E   | E  | E  | E  |
----- |----|----|---- |---- |----  |----  |---- |---- |---- |----|----|----|
-0    |  . | 0  |  1  | 1   |  0   |  0   | 1   | 0   |  0  | 0   | 1  | 1 |
+![Binary floating point](images/binary-floating-point.png)
 
 - Take the sign and the mantissa - 0.0110010
 - Move the point to the right the number of places indicated by the exponent (in this case, 0011 or 3)
@@ -46,9 +40,7 @@ S    | .  | M  |  M  |  M  |  M   |  M   |  M  |  M  | E   | E  | E  | E  |
 ---
 title: Answer
 ---
-S    | .  | M  |  M  |  M  |  M   |  M   |  M  |  M  | E   | E  | E  | E  |
----- |----|----|---- |---- |----  |----  |---- |---- |---- |----|----|----|
-0    |  . | 1  |  0  | 0   |  0   |  0   | 1   | 1   |  0  | 1  | 1  | 0  |
+![Binary](images/binary-floating-point-answer.png)
 
 - 0.1000011
 - Move the point 6 places to the right
