@@ -26,9 +26,9 @@ With a fixed point notation, there is a fixed amount of bits before and after th
 
 In Python, decimal numbers are represented using **floating point representation** - you may have heard them called "floats" - now you know the reason why! Floating point representation requires three things:
 
-    - a sign (+/-)
-    - a mantissa (the significant digits of the number)
-    - an exponent (the power to which the mantissa should be raised)
+- a sign (+/-)
+- a mantissa (the significant digits of the number)
+- an exponent (the power to which the mantissa should be raised)
 
 The exponent allows the point to be moved around (hence why it is "floating") to accommodate storing a wide range of magnitudes of numbers, from the size of an atom to the mass of the sun!
 
