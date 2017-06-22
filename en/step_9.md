@@ -1,15 +1,16 @@
 # Step seven - Implementing the 'dartboard' algorithm on a distributed system
 
-You should have proven in Step 1 that the function for running jobs containing many random trials is working correctly. We will now use it to develop a distributed version for running on OctaPi servers from an OctaPi client.
+Your standalone program demonstrates that the function for running jobs containing many random trials is working correctly. We will now use it to develop a distributed version for running on OctaPi servers from an OctaPi client.
 
   ![Representation of Monte Carlo method comprising M trials of length N, each with a random seed, si](images/m-trials-of-n-points.png)
 
   _Crown Copyright 2017_
 
+### Implementing on a distributed system
 
-In this implementation, we have M trials of N points so that the total number of points in the calculation of π is, N x M.
+In this implementation, we have M trials of N points so that the total number of points in the calculation of π is N x M.
 
-The calculation uses M random seeds, s, one for each trial. The result of each trial, ri, is the number of points that were inside the circle for trial, i. The overall result, R, is therefore the sum of all the individual trial results, ri, divided by the total number of points in the square N x M. Here's how it can be written as a mathematical formula.
+The calculation uses M random seeds, s, one for each trial. The result of each trial, ri, is the number of points that were inside the circle for trial, i. The overall result, R, is therefore the sum of all the individual trial results, r<sub>i</sub>, divided by the total number of points in the square N x M. Here's how it can be written as a mathematical formula.
 
   !["dartboard" calculation](images/dartboard-calculation.png)
 
@@ -35,7 +36,9 @@ We have described it this way because this method allows us to break down a larg
 
 Assuming that you are **starting with the standalone Python 3 code from the previous challenge**, you will need to adapt it to work with Dispy on OctaPi using the above arrangement.
 
-- Let's start by adding code to your original Python script to create a Dispy cluster on your OctaPi network to run your 'compute' function. Your code could look like:
+- Create a copy of your standalone code and save it with a different file name
+
+- Start by adding code to your original Python script to create a Dispy cluster on your OctaPi network to run your 'compute' function. Add this code at the start of your file.
 
     ```python
     import dispy
@@ -92,38 +95,3 @@ Our version of this code is as shown [here](resources/compute_pi_canonical.py).
 --- /collapse ---
 
 This code works well for moderately sized computations, but the client machine can run out of memory as each job that is running requires storage space on the client. There is a technique to drip-feed jobs to the cluster shown in the Dispy documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
-
---- /step ---
---- step ---
----
-title: Step eight - How is the accuracy of the 'dartboard' method affected?
----
-
-The code you have written passes a random seed to each job, so the **entropy** on the client is distributed for use on the servers. Doing it this way allows us to implement better entropy on the client in order to improve the accuracy of the computation. However, we can make best use of the **entropy** that we have by finding the best combination of job length and number of jobs.
-
-Run the 'dartboard' program you have written lots of times with different combinations of job size and job length and record the value of π obtained in a table like the following:
-
-|                |     | Length of job |      |
-| ---------------| --- | -----------   | ---- |
-| No. of jobs    | 100 |        1000   | 5000 |
-| 100            |     |               |      |
-| 1000           |     |               |      |
-| 5000           |     |               |      |
-
-
-What was the best combination of job length and number of jobs?
-
-### Test your understanding
-Why does the accuracy seem to improve for some combinations of number of jobs and job length compared to others?
-
---- collapse ---
----
-title: Answer
----
-
-The entropy will be only be useful for a finite number of trials in each job, after a while the trials start to correlate (the suposedly random points begin to repeat in the same places on the unit square and form a pattern). When this happens, increasing the length of the job will not improve the accuracy of the result. Likewise, the entropy will only be useful for a limited number of jobs because after a while the client entropy will be exhausted and the jobs it launches will also start to correlate (each new job has a similar pattern of points to previous jobs). When this happens, further jobs won’t improve the accuracy of the answer either.
-
-**The results obtained using a Monte Carlo technique using pseudo-random numbers will always be limited in accuracy by the amount of entropy available.**
-
-
---- /collapse ---

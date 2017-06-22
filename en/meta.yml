@@ -17,4 +17,4 @@ steps:
   - title: Step five - Implementing the 'dartboard' algorithm on a single standalone processor
   - title: Step six - Comparing the two methods
   - title: Step seven - Implementing the 'dartboard' algorithm on a distributed system
-  - title: Challenge
+  - title: Step eight - How can we optimise the dartboard method?

@@ -18,6 +18,6 @@ The 'dartboard' algorithm allows us to study how the accuracy and run time of **
 
 The uniform random function is that provided by Python, and is actually only **pseudo-random**. Its purity depends very heavily on the **entropy** (or amount of "randomness") available via the operating system. The accuracy of the result from our program depends on the amount of entropy available on the client.
 
-**How could the accuracy of the 'dartboard' algorithm be improved by increasing the amount of entropy available?**
+The accuracy of the 'dartboard' algorithm could be improved by increasing the amount of entropy available.
 
 [[[generic-theory-what-is-entropy]]]
