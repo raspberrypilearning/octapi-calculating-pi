@@ -1,4 +1,4 @@
-# Step three - Representing decimals on a computer
+# Representing decimals on a computer
 
 Run your π approximation program using Viète's infinite product series, but this time change the loop so that it runs 100 times. You will notice that as the number of iterations goes up, the reported result gradually becomes exactly the same.
 

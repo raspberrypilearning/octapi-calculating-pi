@@ -1,4 +1,4 @@
-# Step two - Calculating π - Viète's method
+# Calculating π - Viète's method
 
 In the 16th and 17th centuries, **infinite series methods** revolutionised the calculation of π. An infinite series method involves an infinitely long series of calculations which progressively generate a more and more accurate approximation of π. The first series discovered in Europe was an infinite product series found by French mathematician François Viète in 1593. This achieved 15 digits after only 25 terms.
 

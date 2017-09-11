@@ -1,4 +1,4 @@
-# Step one - Why is calculating π difficult?
+# Why is calculating π difficult?
 
 ### π is an irrational number
 

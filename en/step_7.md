@@ -1,4 +1,4 @@
-# Step five - Implementing the 'dartboard' algorithm on a single standalone processor
+# Dartboard algorithm - standalone processor
 
 This part of the resource can be done on any computer which can run Python 3, including a Raspberry Pi.
 

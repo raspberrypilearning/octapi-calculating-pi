@@ -1,4 +1,4 @@
-# Step six - Comparing the two methods
+# Comparing the two methods
 
 
 How does the 'dartboard' method compare with Viète's infinite product series for accuracy and speed of execution? Why do you get a different answer each time you run the 'dartboard' technique but the same answer each time you run Viète's?

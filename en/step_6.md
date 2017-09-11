@@ -1,4 +1,4 @@
-# Step four - Monte Carlo methods
+# Monte Carlo method
 
 Now we will try a **Monte Carlo** method for calculating π so that we can see how this technique compares.
 
