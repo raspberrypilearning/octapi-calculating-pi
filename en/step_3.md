@@ -1,6 +1,6 @@
 ## Why is calculating π difficult?
 
-π is an irrational number. An **irrational number** is a number that cannot be written as a simple fraction. The decimal part is infinitely long and does not repeat.
+π is an **irrational number**. An irrational number is a number that cannot be written as a simple fraction. The decimal part is infinitely long and does not repeat.
 
 Many people think that the value of π can be calculated by dividing 22/7. This technique will only ever create a number that is approximately the true value because as π is an irrational number, and by definition it cannot be expressed this way. This ratio also has no mathematical basis on the geometry of circles, it is merely an attempt to represent the true value of π using memorable integers.
 
@@ -20,6 +20,6 @@ The first formal method for calculating π was devised by Archimedes of Syracuse
 
 ![π can be estimated by computing the perimeters of circumscribed and inscribed polygons](images/archimedes-pi.png)
 
-*By Leszek Krupinski,  CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/) via Wikimedia Commons*
+*By Leszek Krupinski, [CC-BY-SA-3.0](http://creativecommons.org/licenses/by-sa/3.0/) via Wikimedia Commons*
 
 This method, or variants of it, was used by several mathematicians over several centuries, Grienberger reaching 39 digits by the 17th century.

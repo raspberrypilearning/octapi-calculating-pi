@@ -1,6 +1,8 @@
-# Representing decimals on a computer
+## Representing decimals on a computer
 
-Run your π approximation program using Viète's infinite product series, but this time change the loop so that it runs 100 times. You will notice that as the number of iterations goes up, the reported result gradually becomes exactly the same.
++ Run your π approximation program using Viète's infinite product series, but this time change the loop so that it runs 100 times.
+
+You will notice that as the number of iterations goes up, the reported result gradually becomes exactly the same.
 
 **Why do you think this is?**
 
@@ -12,7 +14,7 @@ Viète's product series relies on calculating the product of many terms. This br
 
 --- /collapse ---
 
-To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You are probably already familiar with the way positive integers are stored in binary. For example, here is the number 5 (00000101) which is created by adding the place values containing a 1 together, i.e. 4 + 1.
+To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You may already be familiar with the way positive integers are stored in binary. For example, here is the number 5 (00000101) which is created by adding the place values containing a 1 together, i.e. 4 + 1.
 
 ![Binary](images/binary-positive.png)
 
@@ -38,12 +40,20 @@ Suppose you have 12 bits to store our floating point number in. The first of the
 
 ![Binary floating point](images/binary-floating-point.png)
 
-    - Write down the bits representing the sign and the mantissa - 0.0110010
-    - Move the point to the right the number of places indicated by the exponent (in this case, 0011 or 3)
-    - The result is 0011.0010
-    - Calculate the binary numbers each side of the decimal point separately. 0011 = 3, and 0010 = 1/8 or 0.125. The number is 3.125.
+To convert a floating point binary number to denary:
 
-### Test your understanding
++ Write down the bits representing the sign and the mantissa - 0.0110010
++ Move the point to the right the number of places indicated by the exponent (in this case, 0011 or 3)
++ The result is 0011.0010
++ Calculate the binary numbers each side of the decimal point separately. 0011 = 3, and 0010 = 1/8 or 0.125. The number is 3.125.
+
+To convert a denary number to floating point binary:
+
++ Write the whole part in binary, followed by a point - 011.
++ After the whole part, write the fractional part in binary - 011.0010
++ Move the point all the way to the left, counting how many places it is moved.
++ Write the number of places moved on the end as the exponent - .011 0010 0011
++ Before the point, add a sign bit to determine whether the number is positive or negative - 0.01100100011
 
 **Write the number 33.5 in this format**
 

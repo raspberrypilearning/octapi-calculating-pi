@@ -16,6 +16,24 @@ Each *term* in the infinite series looks a bit like this - you may notice that e
 
 + Create a variable called `purple` to represent the square root part of the calculation, and set its value to the square root of 2.
 
+--- hints ---
+--- hint ---
+To find the square root of a number in Python you will need to import the `math` library at the start of your program:
+
+```python
+import math
+```
+--- /hint ---
+--- hint ---
+You can find the square root of a number using `math.sqrt()` - for example here is code which will calculate the square root of 16.
+
+```python
+math.sqrt(16)
+```
+--- /hint ---
+
+--- /hints ---
+
 + Create another variable called `answer` and then calculate the value of the whole first term in the sequence - this will be the `purple` variable divided by 2
 
 So far we have calculated the value of the first term of the infinite series, however it will not be a very precise approximation of π. The more **iterations** through the series we do, the more accurate the result becomes. Here are the first two terms in the infinite series:
@@ -26,7 +44,7 @@ The dot in between the two terms just means **multiply**. So, to get a more accu
 
 - Calculate the value of the new purple section (in this case √(2+√2) )
 - Divide this by two
-- Multiply the result by the previous answer
+- Multiply this result by the previous result
 
 - Let's look at the purple section in more detail.
 
@@ -42,9 +60,11 @@ If you look at the next term of the sequence, you will see that this rule holds 
 
 + Create a loop which runs the steps to calculate the new and more precise answer 25 times, each time saving the value of the 'purple' calculation and the overall answer.
 
+[[[generic-python-for-loop]]]
+
 Notice that the end result of this calculation is equal to 2 / π, but we want to know just the value of π.
 
-+ Rearrange the equation to find out how to calculate the value of π
++ Rearrange the equation to find out how to obtain the value of π
 
     `2 / π = result`
 
