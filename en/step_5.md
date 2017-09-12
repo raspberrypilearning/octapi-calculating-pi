@@ -52,10 +52,10 @@ To convert a denary number to floating point binary:
 + Write the whole part in binary, followed by a point - 011.
 + After the whole part, write the fractional part in binary - 011.0010
 + Move the point all the way to the left, counting how many places it is moved.
-+ Write the number of places moved on the end as the exponent - .011 0010 0011
++ The number of places moved is the exponent, write it in 4 bits at the end - .011 0010 0011
 + Before the point, add a sign bit to determine whether the number is positive or negative - 0.01100100011
 
-**Write the number 33.5 in this format**
+**Convert the number 0.10000110110 to denary**
 
 --- collapse ---
 ---
@@ -63,8 +63,8 @@ title: Answer
 ---
 ![Binary](images/binary-floating-point-answer.png)
 
-- 0.1000011
-- Move the point 6 places to the right
+- Write the sign and mantissa - 0.1000011
+- Move the point 6 (0110) places to the right
 - 0100001.1
 - 0100001 = 32 + 1 = 33
 - .1 = 0.5
@@ -94,7 +94,7 @@ title: Answer
 ---
 As we learnt from the definition of an **irrational number**, the decimal part is infinitely long and never repeats. We can never accurately store the value of π in a variable in Python because it would require an infinite number of bits!
 
-As an extension task, you could use the [decimal module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal) to improve the accuracy of your program. Can you achieve the 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
+As an extension task, you could use the [decimal module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal){:target="_blank"}  to improve the accuracy of your program. Can you achieve the 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
 
 Take a look at our [example program](code/pi_viete.py) to see an implementation of the Viète infinite product series using Python's decimal module.
 
