@@ -1,4 +1,4 @@
-# Dartboard algorithm - standalone processor
+## Dartboard algorithm - standalone processor
 
 This part of the resource can be done on any computer which can run Python 3, including a Raspberry Pi.
 
@@ -6,6 +6,8 @@ This part of the resource can be done on any computer which can run Python 3, in
 - Write a function that takes two parameters - an integer to use as a seed for the random number generator, and an integer number of points you would like to test.
 - The function should generate that number of randomly chosen points and then test each one to determine whether or not it is inside the circle.
 - The function should count and return the number of randomly generated points which fell inside the circle.
+
+[[[generic-python-simple-functions]]]
 
 --- hints ---
 --- hint ---
@@ -51,21 +53,19 @@ def compute(s, n):
         # compute position of the point
         x = random.uniform(0.0, 1.0)
         y = random.uniform(0.0, 1.0)
-        z = x*x + y*y
-        if (z<=1.0)
-            inside = inside + 1
+        result = x*x + y*y
+        if (result <= 1.0)
+            inside += 1
 
-    return(s, inside)
+    return(inside)
 ```
 --- /hint ---
-
-
 --- /hints ---
 
 ### Programming challenge
 Write a Python program that uses this function to calculate the value of π.
 
-- Include inputs for the user to define how many points are tested in each trial (n) and the number of trials (m)
+- Include inputs to allow the user to type in how many points are tested in each trial (n) and the number of trials (m)
 - Call the function you wrote m times, generating a new random seed for each time you call the function
 - Add up the total values found 'inside' the circle
 - Then calculate π = (4 * total_inside) / (n * m).
@@ -74,5 +74,5 @@ Write a Python program that uses this function to calculate the value of π.
 ---
 title: Solution
 ---
-You can see our finished code [here](source/pi_dartboard.py)
+You can see our finished code [here](resources/pi_dartboard.py)
 --- /collapse ---

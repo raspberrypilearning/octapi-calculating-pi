@@ -50,4 +50,4 @@ title: Answer
 
 We can implement this Monte Carlo method on a computer system provided we have a suitable uniform random source of values between 0.0 and 1.0 for the x and y coordinates of the points.
 
-We can write a program to generate lots of random co-ordinate points (x, y) in the square. Each point is called a **trial**. Let's see how the number of trials affects the estimated value of π.
+We can write a program to generate lots of random co-ordinate points (x, y) in the square. Each set of points tested is called a **trial**. Let's see how the number of points in each trial and the number of trials affects the estimated value of π.

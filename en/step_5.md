@@ -96,7 +96,7 @@ As we learnt from the definition of an **irrational number**, the decimal part i
 
 As an extension task, you could use the [decimal module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal){:target="_blank"}  to improve the accuracy of your program. Can you achieve the 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
 
-Take a look at our [example program](code/pi_viete.py) to see an implementation of the Viète infinite product series using Python's decimal module.
+Take a look at our [example program](resources/pi_viete.py) to see an implementation of the Viète infinite product series using Python's decimal module.
 
 Using the decimal module largely removes this problem because it allows arbitrary precision (or more accurately, user defined integer precision) to be specified. The precision is still limited by the amount of memory available, in other words you can only specify finite precision: `getcontext().prec('x')`, where `x` is a finite integer.
 
