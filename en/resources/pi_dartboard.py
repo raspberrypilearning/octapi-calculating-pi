@@ -13,18 +13,24 @@
 
 # 'compute' is the core calculation
 def compute(s, n):
-    import time, random
+    import random
 
     inside = 0
+    random.seed(s)
 
-    # for all the points requested
+    # For the number of points requested
     for i in range(n):
-        # compute position of the point
+        
+        # Create a random point
         x = random.uniform(0.0, 1.0)
         y = random.uniform(0.0, 1.0)
+
+        # Calculate the radius
         z = x*x + y*y
-        if (z<=1.0):
-            inside = inside + 1    # this point is inside the unit circle
+
+        # Check whether the radius is inside the circle
+        if (z <= 1.0):
+            inside = inside + 1    
 
     return(inside)
 
@@ -33,24 +39,35 @@ def compute(s, n):
 if __name__ == '__main__':
     import random, decimal
 
-    # start by inputting the number of jobs to run, and the size of each job
-    no_of_points = int( input('number of random points to include in each job = ') )
-    no_of_jobs = int( input('number of jobs to run = ') )
+    # Input the number of trials to run and the size of each trial
+    no_of_points = int( input('Number of random points to include in each trial = ') )
+    no_of_trials = int( input('Number of trials to run = ') )
 
-    print(('doing %s jobs of %s points each' % (no_of_jobs, no_of_points)))
+    print(('Doing %s trials of %s points each' % (no_of_trials, no_of_points)))
     total_inside = 0
-    for i in range(no_of_jobs):
-        # execute 'compute' standalone
-        ran_seed = random.randint(0,65535) # define a random seed for each job 
+
+    # Run the desired number of trials
+    for i in range(no_of_trials):
+        
+        # Create a new random seed
+        ran_seed = random.randint(0,65535)
+
+        # Run the compute function with this seed
         inside = compute(ran_seed, no_of_points)
 
+        # Add this number to the total of points found inside
         total_inside += inside
 
+        # Report back every 1000 trials
         if (i % 1000 == 0): 
-            print(('executed job %i using random seed %i with result %i' % (i, ran_seed, inside)))
+            print(('Executed trial %i using random seed %i with result %i' % (i, ran_seed, inside)))
 
-    # calclate the estimated value of Pi
-    total_no_of_points = no_of_points * no_of_jobs
-    decimal.getcontext().prec = 100  # override standard precision
+    # Calculate the total number of points tried
+    total_no_of_points = no_of_points * no_of_trials
+
+    # Override standard precision to avoid rounding problems
+    decimal.getcontext().prec = 100
+
+    # Calculate the estimated value of Pi
     Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
-    print(('value of Pi is estimated to be %s using %s points' % (+Pi, total_no_of_points) ))
+    print(('The value of Pi is estimated to be %s using %s points' % (+Pi, total_no_of_points) ))

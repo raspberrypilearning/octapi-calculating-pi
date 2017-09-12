@@ -1,21 +1,14 @@
-# "Challenge: optimising the dartboard method"
+## Challenge: evaluate the dartboard method
 
 The code you have written passes a random seed to each job, so the **entropy** on the client is distributed for use on the servers. Doing it this way allows us to implement better entropy on the client in order to improve the accuracy of the computation. However, we can make best use of the **entropy** that we have by finding the best combination of job length and number of jobs.
 
 Run the 'dartboard' program you have written lots of times with different combinations of job size and job length and record the value of π obtained in a table like the following:
 
-|                |     | Length of job |      |
-| ---------------| --- | -----------   | ---- |
-| No. of jobs    | 100 |        1000   | 5000 |
-| 100            |     |               |      |
-| 1000           |     |               |      |
-| 5000           |     |               |      |
-
+![Table](images/nicer-table.png)
 
 What was the best combination of job length and number of jobs?
 
-### Test your understanding
-Why does the accuracy seem to improve for some combinations of number of jobs and job length compared to others?
+**Why does the accuracy seem to improve for some combinations of number of jobs and job length compared to others?**
 
 --- collapse ---
 ---
@@ -29,8 +22,8 @@ The entropy will be only be useful for a finite number of trials in each job, af
 
 --- /collapse ---
 
-### What's next?
+### Challenge
 
-- How I wish I could calculate Pi. Try some "Pi Philology", find a sentence or paragraph where the number of letters in each word corresponds to the digits of π in the right order.
-- Use your OctaPi to investigate the power of distributed computing! Why not learn about [Public Key Cryptography](http://www.raspberrypi.org/learning/octapi-public-key-cryptography) ?
-- For more on the value of Pi, read: "Pi Unleashed" by Jörg Arndt and Christoph Haenel, Springer-Verlag, 2006, ISBN 978-3-540-66572-4. English translation by Catriona and David Lischka
+- _How I wish I could calculate Pi._ Try some "Pi Philology", find a sentence or paragraph where the number of letters in each word corresponds to the digits of π in the right order.
+- Use your OctaPi to investigate the power of distributed computing! Why not learn about [Public Key Cryptography](https://projects.raspberrypi.org/en/projects/rpi-python-octapi-public-key-cryptography){:target="_blank"}
+- For more detail about the value of Pi, read: "Pi Unleashed" by Jörg Arndt and Christoph Haenel, Springer-Verlag, 2006, ISBN 978-3-540-66572-4. English translation by Catriona and David Lischka

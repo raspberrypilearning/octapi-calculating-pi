@@ -1,6 +1,6 @@
-# Dartboard algorithm - distributed system
+## Dartboard algorithm - distributed system
 
-Your standalone program demonstrates that the function for running jobs containing many random trials is working correctly. We will now use it to develop a distributed version for running on OctaPi servers from an OctaPi client.
+Your standalone dartboard program demonstrates that the function for running jobs containing many random trials is working correctly. We will now use it to develop a distributed version for running on OctaPi servers from an OctaPi client.
 
   ![Representation of Monte Carlo method comprising M trials of length N, each with a random seed, si](images/m-trials-of-n-points.png)
 
@@ -8,15 +8,15 @@ Your standalone program demonstrates that the function for running jobs containi
 
 ### Implementing on a distributed system
 
-In this implementation, we have M trials of N points so that the total number of points in the calculation of π is N x M.
+In this implementation, we have M trials of N points so that the total number of points in the calculation of π is M x N.
 
-The calculation uses M random seeds, s, one for each trial. The result of each trial, ri, is the number of points that were inside the circle for trial, i. The overall result, R, is therefore the sum of all the individual trial results, r<sub>i</sub>, divided by the total number of points in the square N x M. Here's how it can be written as a mathematical formula.
+The calculation uses M random seeds, s, one for each trial. The result of each trial, r<sub>i</sub>, is the number of points that were inside the circle for trial i. The overall result, R, is therefore the sum of all the individual trial results, r<sub>i</sub>, divided by the total number of points in the square N x M. Here's how it can be written as a mathematical formula.
 
-  !["dartboard" calculation](images/dartboard-calculation.png)
+!["dartboard" calculation](images/dartboard-calculation.png)
 
-This might look a bit scary, so let's break down what this means. This site has a [good explanation of sigma](https://www.mathsisfun.com/algebra/sigma-notation.html) (the Σ symbol), which means to sum up whatever is after it.
+This might look a bit scary, so let's break down what this means. This site has a [good explanation of sigma](https://www.mathsisfun.com/algebra/sigma-notation.html){:target="_blank"}  (the Σ symbol), which means to sum up whatever is after it.
 
-  ![How the sigma works](images/dartboard-calculation1.png)
+ ![How the sigma works](images/dartboard-calculation1.png)
 
  This formula represents the steps you did when writing the dartboard program in the previous programming challenge:
  - Include inputs for the user to define how many points are tested in each trial (n) and the number of trials (m)
@@ -34,38 +34,40 @@ We have described it this way because this method allows us to break down a larg
 
 ### Adapting the code
 
-Assuming that you are **starting with the standalone Python 3 code from the previous challenge**, you will need to adapt it to work with Dispy on OctaPi using the above arrangement.
+Assuming that you are **starting with the your dartboard code from the previous challenge**, you will need to adapt it to work with Dispy on OctaPi.
 
-- Create a copy of your standalone code and save it with a different file name
++ Create a copy of your standalone code and save it with a different file name
 
-- Start by adding code to your original Python script to create a Dispy cluster on your OctaPi network to run your 'compute' function. Add this code at the start of your file.
+You need to add code to create a Dispy cluster on your OctaPi network to run your 'compute' function.
 
-    ```python
-    import dispy
++ Add this code at the start of your new file:
 
-    server_nodes ='192.168.1.\*'
-    cluster = dispy.JobCluster(compute, nodes=server_nodes)
-    ```
+```python
+import dispy
 
-    This client code creates a cluster object using your 'compute' function and points to servers on your network with the the addresses specified.
+server_nodes ='192.168.1.\*'
+cluster = dispy.JobCluster(compute, nodes=server_nodes)
+```
 
-- You now need a loop in order to create jobs. This loop will distribute the `compute` function with a random seed, `ran_seed`, to be run on the cluster `no_of_jobs` times. Your code for doing this might look like this:
+This client code creates a cluster object using your 'compute' function and points to servers on your network with the the addresses specified.
 
-    ```python
-    jobs = []
-    for i in range(no_of_jobs):
-        # Schedule the execution of the 'compute' function on one of the OctaPi nodes
-        ran_seed = random.randint(0,65535) # Define a random seed for this job
++ You now need a loop in order to create jobs. This loop will distribute the `compute` function with a random seed, `ran_seed`, to be run on the cluster `no_of_jobs` times. Your code might look like this:
 
-        # Create a job
-        job = cluster.submit(ran_seed, no_of_points)
-        job.id = i # associate an ID to the job
+```python
+jobs = []
+for i in range(no_of_jobs):
+    # Schedule the execution of the 'compute' function on one of the OctaPi nodes
+    ran_seed = random.randint(0,65535) # Define a random seed for this job
 
-        # Add this job to the list of jobs
-        jobs.append(job)
-    ```
+    # Create a job
+    job = cluster.submit(ran_seed, no_of_points)
+    job.id = i # associate an ID to the job
 
-- Finally, you need to collect the results from the jobs after they have completed and calculate the total number of points that were inside the quarter circle.
+    # Add this job to the list of jobs
+    jobs.append(job)
+```
+
++ Finally, you need to collect the results from the jobs after they have completed and calculate the total number of points that were inside the quarter circle.
 
     ```python
     total_inside = 0
@@ -75,7 +77,7 @@ Assuming that you are **starting with the standalone Python 3 code from the prev
         total_inside += inside
     ```
 
-- The value of Pi is given as
++ Then, you can calculate the value of Pi, like this:
 
     ```python
     total_no_of_points = no_of_points * no_of_jobs
