@@ -10,7 +10,7 @@ You will notice that as the number of iterations goes up, the reported result gr
 ---
 title: Answer
 ---
-Viète's product series relies on calculating the product of many terms. This breaks down in accuracy after a while because of the accuracy with which the results can be saved by the computer. The more iterations that are used, the greater the impact of any inaccuracies caused by rounding errors.
+Viète's product series relies on calculating the product of many terms. This reduces in accuracy after a while because of the precision with which the results can be saved by the computer. The more iterations that are used, the greater the impact of any inaccuracies caused by rounding errors.
 
 --- /collapse ---
 
@@ -32,7 +32,7 @@ In Python, decimal numbers are represented using **floating point representation
 - a mantissa (the significant digits of the number)
 - an exponent (the power to which the mantissa should be raised)
 
-The exponent allows the point to be moved around (hence why it is "floating") to accommodate storing a wide range of magnitudes of numbers, from the size of an atom to the mass of the sun!
+The exponent allows the point to be moved around (hence why it is "floating") to accommodate storing a wide range of magnitudes of numbers, from the size of an atom to the mass of the sun! This concept is very similar to that of [standard form/scientific notation](https://www.mathsisfun.com/numbers/scientific-notation.html) which you may have previously encountered.
 
 ### Representing a number in floating point binary
 
