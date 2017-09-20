@@ -18,10 +18,10 @@ The ratio of the number of points inside the quarter circle to the total number 
 ---
 title: How did you calculate this ratio?
 ---
-Let r be the radius of the circle.
+Let r be the radius of the circle. The ∝ symbol means "proportional to".
 
-Points inside the square = r²
-Points inside the quarter circle = (πr²)/4 (the area of a quarter of the circle)
+Points inside the square ∝ r²
+Points inside the quarter circle ∝ (πr²)/4 (the area of a quarter of the circle)
 
 So the ratio of points inside : points outside is (πr²)/4 : r²
 

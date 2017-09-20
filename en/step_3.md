@@ -16,7 +16,9 @@ There are lots of irrational numbers, two of the most commonly encountered ones 
 
 --- /collapse ---
 
-The first formal method for calculating π was devised by Archimedes of Syracuse (287-212 BCE) around 250BCE and worked by fitting a circle between two polygons to try and estimate the length of the circumference of the circle using the perimeters of the polygons. The circumference of the circle must be greater than the perimeter of the inner polygon, but also less than that of the outer polygon.
+The first formal method for calculating π was devised by Archimedes of Syracuse (287-212 BCE) around 250BCE and worked by fitting a circle between two polygons to try and estimate the length of the circumference of the circle using the perimeters of the polygons. The circumference (c) of the circle must be greater than the perimeter of the inner polygon, but also less than that of the outer polygon.
+
+We know that c = πd, so if we know the diameter (d) of the circle and can approximate c using the polygons, we can estimate the value of π by rearranging the formula to π = c/d.
 
 ![π can be estimated by computing the perimeters of circumscribed and inscribed polygons](images/archimedes-pi.png)
 
