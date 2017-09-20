@@ -73,9 +73,42 @@ Write a Python program that uses this function to calculate the value of π.
 - Add up the total values found 'inside' the circle
 - Then calculate π = (4 * total_inside) / (n * m).
 
---- collapse ---
----
-title: Solution
----
+--- hints ---
+--- hint ---
+You will need to use Python's `decimal` module to make sure you don't encounter problems with the precision of numbers you are able to store.
+
+1. Add the line `import decimal` at the start of your program
+1. Set up the precision with this line of code
+    ```python
+    decimal.getcontext().prec = 100
+    ```
+1. When you calculate the estimated value of Pi, use the Decimal type from the decimal library
+
+```python
+pi = decimal.Decimal( YOUR CALCULATION HERE )
+```
+--- /hint ---
+--- hint ---
+Here is some pseudo code to help you:
+
+INPUT number of points
+INPUT number of trials
+SET total inside = 0
+
+FOR i FROM 0 TO number of trials
+...GENERATE random seed
+...CALL compute(seed, number of points)
+...ADD result to total inside
+
+SET total points = number of points * number of trials
+
+CALCULATE 4 * total inside / total points
+
+PRINT result
+
+--- /hint ---
+
+--- hint ---
 You can see our finished code [here](resources/pi_dartboard.py)
---- /collapse ---
+--- /hint ---
+--- /hints ---
