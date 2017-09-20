@@ -7,12 +7,32 @@ The Monte Carlo method we will use for computing π is called the **dartboard me
 - A quarter circle with a radius of 1 is drawn inside in a 1x1 square.
 - Random points are generated that fall inside the square (rather like darts being thrown at a dart board).
 - The random points can be used to estimate the two areas by seeing how many fall in each section (inside or outside the circle).
-- The ratio of the number of points inside the quarter circle to the total number of points will approximately equal π/4.
-- The larger the number of randomly generated points, the more accurate the estimate of π.
 
 ![Random distribution of points in a square partitioned using a quarter circle](images/pi-30k.gif)
 
 _By nicoguaro (Own work) [CC BY 3.0](http://creativecommons.org/licenses/by/3.0), via Wikimedia Commons_
+
+The ratio of the number of points inside the quarter circle to the total number of points will approximately equal π/4.
+
+--- collapse ---
+---
+title: How did you calculate this ratio?
+---
+Let r be the radius of the circle.
+
+Points inside the square = r²
+Points inside the quarter circle = (πr²)/4 (the area of a quarter of the circle)
+
+So the ratio of points inside : points outside is (πr²)/4 : r²
+
+We can simplify this:
+(πr²)/4 : r²
+πr² : 4r²   - multiply both sides by 4
+π : 4       - divide both sides by r²
+--- /collapse ---
+
+The larger the number of randomly generated points, the more accurate the estimate of π.
+
 
 ### Calculating whether a point is inside the circle
 

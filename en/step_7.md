@@ -4,6 +4,9 @@ This part of the resource can be done on any computer which can run Python 3, in
 
 ### Programming challenge
 - Write a function that takes two parameters - an integer to use as a seed for the random number generator, and an integer number of points you would like to test.
+
+[[[generic-python-random-seed]]]
+
 - The function should generate that number of randomly chosen points and then test each one to determine whether or not it is inside the circle.
 - The function should count and return the number of randomly generated points which fell inside the circle.
 

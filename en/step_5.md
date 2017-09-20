@@ -14,9 +14,9 @@ Viète's product series relies on calculating the product of many terms. This br
 
 --- /collapse ---
 
-To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You may already be familiar with the way positive integers are stored in binary. For example, here is the number 5 (00000101) which is created by adding the place values containing a 1 together, i.e. 4 + 1.
+To understand why this is a particular problem when calculating an **irrational number**, you need to know how decimal numbers (numbers with a fractional part) are stored in a computer. You may already be familiar with the way positive integers are stored in binary, but if not, here's a recap.
 
-![Binary](images/binary-positive.png)
+[[[generic-theory-positive-integer-binary]]]
 
 If we were to extend the binary place value headers to the _right_, they extend infinitely far with each new place value representing half the previous value:
 

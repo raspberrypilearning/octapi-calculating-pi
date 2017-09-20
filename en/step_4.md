@@ -34,7 +34,9 @@ math.sqrt(16)
 
 --- /hints ---
 
-+ Create another variable called `answer` and then calculate the value of the whole first term in the sequence - this will be the `purple` variable divided by 2
++ Create another variable called `answer` and then calculate the value of the whole first term in the sequence - this will be the `purple` variable divided by 2.
+
+You can check your code at this point by adding in a line to print the value of `answer` and checking that it equals √2/2 or 0.7071067811865476.
 
 So far we have calculated the value of the first term of the infinite series, however it will not be a very precise approximation of π. The more **iterations** through the series we do, the more accurate the result becomes. Here are the first two terms in the infinite series:
 
