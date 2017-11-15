@@ -33,36 +33,33 @@ def compute(s, n):
 
     return(inside)
 
+import random, decimal, dispy
 
-
-import random, decimal
+server_nodes ='192.168.1.\*'
+cluster = dispy.JobCluster(compute, nodes=server_nodes)
 
 # Input the number of trials to run and the size of each trial
 no_of_points = int( input('Number of random points to include in each trial = ') )
-no_of_trials = int( input('Number of trials to run = ') )
+no_of_jobs = int( input('Number of trials to run = ') )
 
-print(('Doing %s trials of %s points each' % (no_of_trials, no_of_points)))
+jobs = []
+for i in range(no_of_jobs):
+    # Schedule the execution of the 'compute' function on one of the OctaPi nodes
+    ran_seed = random.randint(0,65535) # Define a random seed for this job
+
+    # Create a job
+    job = cluster.submit(ran_seed, no_of_points)
+    job.id = i # Associate an ID to the job
+
+    # Add this job to the list of jobs
+    jobs.append(job)
+
 total_inside = 0
-
-# Run the desired number of trials
-for i in range(no_of_trials):
-
-    # Create a new random seed
-    ran_seed = random.randint(0,65535)
-
-    # Run the compute function with this seed
-    inside = compute(ran_seed, no_of_points)
-
-    # Add this number to the total of points found inside
+for job in jobs:
+    inside = job() # Waits for job to finish and returns results
     total_inside += inside
 
-    # Report back every 1000 trials
-    if (i % 1000 == 0):
-        print(('Executed trial %i using random seed %i with result %i' % (i, ran_seed, inside)))
-
-# Calculate the total number of points tried
-total_no_of_points = no_of_points * no_of_trials
-
+total_no_of_points = no_of_points * no_of_jobs
 # Override standard precision to avoid rounding problems
 decimal.getcontext().prec = 100
 

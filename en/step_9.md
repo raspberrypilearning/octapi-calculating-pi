@@ -34,22 +34,26 @@ We have described it this way because this method allows us to break down a larg
 
 ### Adapting the code
 
-Assuming that you are **starting with the your dartboard code from the previous challenge**, you will need to adapt it to work with Dispy on OctaPi.
+Assuming that you will reuse some of the **dartboard code from the previous challenge**, you will need to adapt it to work with Dispy on OctaPi.
 
-+ Create a copy of your standalone code and save it with a different file name
++ Create a new file and call it `dartboard_octapi.py`
+
++ Copy the `compute` function from your standalone code into this file.
 
 You need to add code to create a Dispy cluster on your OctaPi network to run your 'compute' function.
 
-+ Add this code at the start of your new file:
++ Underneath, add some code to import the libraries and set up your cluster
 
 ```python
-import dispy
+import random, decimal, dispy
 
 server_nodes ='192.168.1.\*'
 cluster = dispy.JobCluster(compute, nodes=server_nodes)
 ```
 
-This client code creates a cluster object using your 'compute' function and points to servers on your network with the the addresses specified.
+This client code creates a cluster object using your 'compute' function and points to servers on your network with the addresses specified.
+
++ Copy the code asking the user to input the number of trials and jobs, but rename your `no_of_trials` variable to `no_of_jobs`. In this version, each trial will be a job run on the cluster.
 
 + You now need a loop in order to create jobs. This loop will distribute the `compute` function with a random seed, `ran_seed`, to be run on the cluster `no_of_jobs` times. Your code might look like this:
 
@@ -61,7 +65,7 @@ for i in range(no_of_jobs):
 
     # Create a job
     job = cluster.submit(ran_seed, no_of_points)
-    job.id = i # associate an ID to the job
+    job.id = i # Associate an ID to the job
 
     # Add this job to the list of jobs
     jobs.append(job)
@@ -69,20 +73,27 @@ for i in range(no_of_jobs):
 
 + Finally, you need to collect the results from the jobs after they have completed and calculate the total number of points that were inside the quarter circle.
 
-    ```python
-    total_inside = 0
-    for job in jobs:
-        ran_seed, inside = job() # waits for job to finish and returns results
+```python
+total_inside = 0
+for job in jobs:
+    inside = job() # Waits for job to finish and returns results
 
-        total_inside += inside
-    ```
+    total_inside += inside
+```
 
-+ Then, you can calculate the value of Pi, like this:
++ Then, you can calculate the value of Pi, just as you did in the standalone version, except that you need to multiply `no_of_points` by `no_of_jobs` as you have renamed the variable:
 
-    ```python
-    total_no_of_points = no_of_points * no_of_jobs
-    Pi = (4.0 * total_inside) / total_no_of_points
-    ```
+```python
+total_no_of_points = no_of_points * no_of_jobs
+
+# Override standard precision to avoid rounding problems
+decimal.getcontext().prec = 100
+
+# Calculate the estimated value of Pi
+Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
+print(('The value of Pi is estimated to be %s using %s points' % (+Pi, total_no_of_points) ))
+
+```
 
 ### Programming challenge
 Write a distributed Python 3 program to re-implement the standalone version of the 'dartboard' algorithm using Dispy for running on OctaPi. You can use the code fragments you have been shown.
@@ -92,7 +103,7 @@ Write a distributed Python 3 program to re-implement the standalone version of t
 title: Answer
 ---
 
-Our version of this code is as shown [here](resources/compute_pi_canonical.py).
+Our version of this code is as shown [here](resources/dartboard_octapi.py).
 
 --- /collapse ---
 
