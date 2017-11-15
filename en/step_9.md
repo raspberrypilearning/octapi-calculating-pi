@@ -91,7 +91,7 @@ decimal.getcontext().prec = 100
 
 # Calculate the estimated value of Pi
 Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
-print(('The value of Pi is estimated to be %s using %s points' % (+Pi, total_no_of_points) ))
+print(('The value of Pi is estimated to be %s using %s points' % (Pi, total_no_of_points) ))
 
 ```
 
