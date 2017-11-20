@@ -2,12 +2,12 @@
 
 This part of the resource can be done on any computer which can run Python 3, including a Raspberry Pi.
 
-### Programming challenge
-- Write a function that takes two parameters - an integer to use as a seed for the random number generator, and an integer number of points you would like to test.
+### Challenge: write a function to test random points
+- Write a function that takes two parameters: an integer to use as a seed for the random number generator, and an integer number of points you would like to test.
 
 [[[generic-python-random-seed]]]
 
-- The function should generate that number of randomly chosen points and then test each one to determine whether or not it is inside the circle.
+- The function should generate that number of randomly chosen points and then test each one to determine whether or not it falls inside the circle.
 - The function should count and return the number of randomly generated points which fell inside the circle.
 
 [[[generic-python-simple-functions]]]
@@ -17,7 +17,7 @@ This part of the resource can be done on any computer which can run Python 3, in
 You will need to `import random` inside your function to be able to generate random numbers. You can then generate the numbers using `random.uniform()`.
 --- /hint ---
 --- hint ---
-Here is some pseudo code for a function which randomly generates points using a fixed random seed.
+Here is some pseudocode for a function which randomly generates points using a fixed **random seed**.
 
 ```python
 FUNCTION compute(seed, number_of_points)
@@ -43,7 +43,7 @@ END FUNCTION
 
 --- /hint ---
 --- hint ---
-Here is a solution in Python
+Here is a solution:
 ```python
 
 def compute(s, n):
@@ -65,13 +65,13 @@ def compute(s, n):
 --- /hint ---
 --- /hints ---
 
-### Programming challenge
+### Challenge: calculate π using your function
 Write a Python program that uses this function to calculate the value of π.
 
-- Include inputs to allow the user to type in how many points are tested in each trial (n) and the number of trials (m)
-- Call the function you wrote m times, generating a new random seed for each time you call the function
-- Add up the total values found 'inside' the circle
-- Then calculate π = (4 * total_inside) / (n * m).
+- Include inputs to allow the user to type in how many points are tested in each trial (`n`) and the number of trials (`m`)
+- Call the function you wrote `m` times, generating a new random seed for each time you call the function
+- Add up the total values found inside the circle
+- Then calculate `π = (4 * total_inside) / (n * m)`
 
 --- hints ---
 --- hint ---
@@ -82,14 +82,14 @@ You will need to use Python's `decimal` module to make sure you don't encounter 
     ```python
     decimal.getcontext().prec = 100
     ```
-1. When you calculate the estimated value of Pi, use the Decimal type from the decimal library
+1. When you calculate the estimated value of Pi, use the `Decimal` type from the `decimal` library
 
 ```python
 pi = decimal.Decimal( YOUR CALCULATION HERE )
 ```
 --- /hint ---
 --- hint ---
-Here is some pseudo code to help you:
+Here is some pseudocode to help you:
 
 **INPUT** number of points
 **INPUT** number of trials
@@ -148,6 +148,6 @@ Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
 print(('The value of Pi is estimated to be %s using %s points' % (+Pi, total_no_of_points) ))
 ```
 
-You can see our full finished code [here](resources/pi_dartboard.py)
+You can see our complete finished code [here](resources/pi_dartboard.py).
 --- /hint ---
 --- /hints ---
