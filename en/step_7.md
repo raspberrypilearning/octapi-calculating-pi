@@ -1,4 +1,4 @@
-## Dartboard algorithm - standalone processor
+## Dartboard algorithm on a standalone processor
 
 This part of the resource can be done on any computer which can run Python 3, including a Raspberry Pi.
 
