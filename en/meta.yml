@@ -1,4 +1,4 @@
-title: "OctaPi: Calculate Pi"
+title: "OctaPi: calculating Pi"
 hero_image: images/banner.png
 description: Learn how to calculate Pi using the power of distributed computing
 theme: navy
@@ -14,10 +14,10 @@ steps:
   - title: Introduction
   - title: What you will need
   - title: Why is calculating π difficult?
-  - title: Calculating π - Viète's method
+  - title: Viète's method
   - title: Representing decimals on a computer
   - title: Monte Carlo method
-  - title: Dartboard algorithm - standalone processor
+  - title: Dartboard algorithm — standalone processor
   - title: Comparing the two methods
-  - title: Dartboard algorithm - distributed system
+  - title: Dartboard algorithm — distributed system
   - title: "Challenge: optimising the dartboard method"
