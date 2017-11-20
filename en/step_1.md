@@ -8,7 +8,7 @@ The number π is the ratio of a circle's circumference to its diameter, 3.141592
 
 ![π is the ratio of a circle’s circumference to its diameter](images/circle_diameter_radius.png)
 
-The value of π is often used in mathematics, physics, and engineering, but it is an **irrational number** and therefore its actual value is hard to use in accurate calculations.
+The value of π is often used in mathematics, physics, and engineering, but it is an **irrational number** and therefore it's hard to use its actual value in accurate calculations.
 
 ![Calculating Pi table](images/calculating-pi-table.png)
 
@@ -24,7 +24,7 @@ This resource covers elements from the following strands of the [Raspberry Pi Di
 OctaPi: Calculating Pi by [GCHQ](https://www.gchq.gov.uk/){:target="_blank"} and the Raspberry Pi Foundation is licensed under a Creative Commons Attribution 4.0 International Licence.
 Based on a work at https://github.com/raspberrypilearning/octapi-calculating-pi
 
-**Code and scripts copyright**
+**Code and scripts copyright:**
 
 [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/){:target="_blank"}
 License: [Apache 2](https://www.apache.org/licenses/LICENSE-2.0){:target="_blank"}
