@@ -69,10 +69,6 @@ Notice that the end result of this calculation is equal to `2 / π`, but we want
 
 `2 / π = result`
 
-### Challenge: implement Viète's method
-
-Working through the steps described above, write a Python program to calculate the value of π using Viète's product series.
-
 --- hints ---
 --- hint ---
 Here is some pseudocode to help you write your program:
