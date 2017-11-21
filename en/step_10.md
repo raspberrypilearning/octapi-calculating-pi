@@ -1,8 +1,8 @@
 ## Challenge: evaluate the dartboard method
 
-The code you have written passes a random seed to each job, so the entropy on the client is distributed for use on the servers. Doing it this way allows us to implement better entropy on the client in order to improve the accuracy of the computation. However, we can make best use of the entropy that we have by finding the best combination of job length and number of jobs.
+The code you have written passes a random seed to each job, so the entropy on the client is distributed for use on the servers. This means it's possible to implement better entropy on the client in order to improve the accuracy of the computation. For now, we can make best use of the entropy that we have by finding the best combination of job length and number of jobs.
 
-Run the dartboard program you have written lots of times with different combinations of job size and job length and record the value of π obtained in a table like the following:
+Run the dartboard program lots of times with different combinations of job number and job length, and record the value of π obtained in a table like this:
 
 ![Table](images/nicer-table.png)
 
