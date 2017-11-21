@@ -1,4 +1,4 @@
-## Dartboard algorithm on a distributed system
+## Dartboard algorithm on the OctaPi
 
 Your standalone dartboard program demonstrates that the function for running jobs containing many random trials is working correctly. We will now use it to develop a distributed version for running on OctaPi servers from an OctaPi client.
 
