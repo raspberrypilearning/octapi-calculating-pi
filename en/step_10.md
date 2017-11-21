@@ -15,7 +15,7 @@ What was the best combination of job length and number of jobs?
 title: Answer
 ---
 
-The entropy will be only be useful for a finite number of **trials in each job**: after a while the trials start to correlate as the suposedly random points begin to repeat in the same places on the square, forming a pattern. When this happens, increasing the length of the job will not improve the accuracy of the result. Likewise, the entropy will only be useful for a limited number of **jobs**: the client entropy will be exhausted after a while and the jobs it launches will also start to form a pattern. When this happens, running more jobs won’t improve the accuracy of the answer.
+The entropy will be only be useful for a finite number of **trials in each job**: after a while the trials start to correlate as the supposedly random points begin to repeat in the same places on the square, forming a pattern. When this happens, increasing the length of the job will not improve the accuracy of the result. Likewise, the entropy will only be useful for a limited number of **jobs**: the client entropy will be exhausted after a while and the jobs it launches will also start to correlate. When this happens, running more jobs won’t improve the accuracy of the answer.
 
 **The accuracy of results calculated by a Monte Carlo technique using pseudorandom numbers will always be limited by the amount of entropy available.**
 
