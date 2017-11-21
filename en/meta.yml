@@ -19,5 +19,5 @@ steps:
   - title: Monte Carlo method
   - title: Dartboard algorithm on a standalone processor
   - title: Comparing the two methods
-  - title: Dartboard algorithm on a distributed system
+  - title: Dartboard algorithm on the OctaPi
   - title: "Challenge: optimising the dartboard method"
