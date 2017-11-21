@@ -92,19 +92,14 @@ decimal.getcontext().prec = 100
 # Calculate the estimated value of Pi
 Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
 print(('The value of Pi is estimated to be %s using %s points' % (Pi, total_no_of_points) ))
-
 ```
 
-### Challenge: dartboard algorithm for OctaPi
-Write a distributed Python 3 program to re-implement the standalone version of the dartboard algorithm using `Dispy` for running on OctaPi. You can use the code fragments above.
-
---- collapse ---
----
-title: Answer
----
+--- /hints ---
+--- /hint ---
 
 Our version of this code is [here](resources/dartboard_octapi.py).
 
---- /collapse ---
+--- /hint ---
+--- /hints ---
 
-This code works well for moderately-sized computations, but the client machine can run out of memory as each job that is running requires storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
+This code works well for moderately-sized computations, but the client machine may run out of memory, as each job that is running requires storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
