@@ -94,8 +94,8 @@ Pi = decimal.Decimal(4 * total_inside / total_no_of_points)
 print(('The value of Pi is estimated to be %s using %s points' % (Pi, total_no_of_points) ))
 ```
 
---- /hints ---
---- /hint ---
+--- hints ---
+--- hint ---
 
 Our version of this code is [here](resources/dartboard_octapi.py).
 
