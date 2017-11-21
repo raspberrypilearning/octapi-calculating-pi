@@ -8,7 +8,7 @@ The number π is the ratio of a circle's circumference to its diameter: 3.141592
 
 ![π is the ratio of a circle’s circumference to its diameter](images/circle_diameter_radius.png)
 
-The value of π is often used in mathematics, physics, and engineering, but it is an **irrational number** and therefore it's hard to use its actual value in accurate calculations.
+Due to the mathematical nature of π, it's hard to use its actual value in accurate calculations. Finding the value of π is important for science and engineering, and it is also an intellectual puzzle that has entertained mathematicians for centuries.
 
 ![Calculating Pi table](images/calculating-pi-table.png)
 
