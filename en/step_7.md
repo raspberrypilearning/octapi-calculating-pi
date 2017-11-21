@@ -1,23 +1,23 @@
 ## Dartboard algorithm on a standalone processor
 
-This part of the resource can be done on any computer which can run Python 3, including a Raspberry Pi.
+You can do this part of the resource on any computer able to run Python 3, including a Raspberry Pi.
 
 ### Challenge: write a function to test random points
-- Write a function that takes two parameters: an integer to use as a seed for the random number generator, and an integer number of points you would like to test.
+- Write a function that takes two parameters: an integer to use as a **random seed** for the random number generator, and an integer number of points you would like to test.
 
 [[[generic-python-random-seed]]]
 
-- The function should generate that number of randomly chosen points and then test each one to determine whether or not it falls inside the circle.
+- The function should generate that number of randomly chosen points and test each one to determine whether or not it falls inside the circle.
 - The function should count and return the number of randomly generated points which fell inside the circle.
 
 [[[generic-python-simple-functions]]]
 
 --- hints ---
 --- hint ---
-You will need to `import random` inside your function to be able to generate random numbers. You can then generate the numbers using `random.uniform()`.
+You will need to `import random` inside your function. Then you can generate the random numbers you need using `random.uniform()`.
 --- /hint ---
 --- hint ---
-Here is some pseudocode for a function which randomly generates points using a fixed **random seed**.
+Here is some pseudocode for a function which randomly generates points using a fixed random seed.
 
 ```python
 FUNCTION compute(seed, number_of_points)
@@ -68,10 +68,10 @@ def compute(s, n):
 ### Challenge: calculate π using your function
 Write a Python program that uses this function to calculate the value of π.
 
-- Include inputs to allow the user to type in how many points are tested in each trial (`n`) and the number of trials (`m`)
-- Call the function you wrote `m` times, generating a new random seed for each time you call the function
+- Include inputs to allow the user to type in how many points are tested in each trial (`N`) and the number of trials (`M`)
+- Call the function you wrote `M` times, generating a new random seed for each time you call it
 - Add up the total values found inside the circle
-- Then calculate `π = (4 * total_inside) / (n * m)`
+- Then calculate `π = (4 * total_inside) / (N * M)`
 
 --- hints ---
 --- hint ---
