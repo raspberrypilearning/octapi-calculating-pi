@@ -9,14 +9,14 @@ title: Answer
 
 + Try runnning the dartboard program with 25 trials of 1000 points (that's 25000 trials in total).
 
-You should only see about 2-digit accuracy for 1000 times as many computations as the Viète method needs for 15-digit accuracy. Because you are using random trials so the program runs with different values each time, you get a different result each time.
+You should only see about 2-digit accuracy, even though you've performed a 1000 times more computations as the Viète method needs for 15-digit accuracy (remember you calculated 25 terms with it). Because you are using random trials, the program runs with different values each time, giving you get a different result.
 
-**Monte Carlo methods are best suited to situations where there is no formula for calculation.** The value of π has many methods for calculating, so in this particular case it's better to choose a different method.
+**Monte Carlo methods are best suited to situations where there is no formula for calculation.** There are many methods for calculating the value of π, so in this particular case it's better to choose a non–Monte Carlo method if you want an accurate value.
 
 --- /collapse ---
 
-The dartboard algorithm allows us to study how the accuracy and runtime of Monte Carlo methods are affected by how randomly the trials can chosen.
+The dartboard algorithm allows us to study how the accuracy and runtime of a Monte Carlo method is affected by how randomly the trials can chosen.
 
-The `uniform random` function provided by Python is actually only **pseudorandom**. Its purity depends very heavily on the **entropy** (or amount of "randomness") available via the operating system. Therefore, the accuracy of the result calculated by our dartboard program depends on the amount of entropy the OctaPi client machine has; if you could increase the entropy, you would thereby increase the accuracy of the dartboard algorithm.
+The `uniform random` function provided by Python is actually only **pseudorandom**. Its purity depends very heavily on the **entropy** (or amount of "randomness") available via the operating system. Therefore, the accuracy of the result calculated by our dartboard program depends on the amount of entropy the OctaPi client machine has; if you could increase the amount of entropy, you would thereby increase the accuracy of the dartboard algorithm.
 
 [[[generic-theory-what-is-entropy]]]
