@@ -24,6 +24,6 @@ The entropy will be only be useful for a finite number of trials in each job: af
 
 ### Challenge
 
-- _How I wish I could calculate Pi._ Try some "Pi philology", find a sentence or paragraph where the number of letters in each word corresponds to the digits of π in the right order.
+- Try some "Pi philology": find a sentence (such as _How I wish I could calculate Pi_) in which the number of letters of each word corresponds to the digits of π in the right order.
 - Use your OctaPi to investigate the power of distributed computing! Why not learn about [Public Key Cryptography](https://projects.raspberrypi.org/en/projects/rpi-python-octapi-public-key-cryptography){:target="_blank"}?
 - For more about the value of π, read: _Pi Unleashed_ by Jörg Arndt and Christoph Haenel, Springer-Verlag, 2006, ISBN 978-3-540-66572-4. English translation by Catriona and David Lischka
