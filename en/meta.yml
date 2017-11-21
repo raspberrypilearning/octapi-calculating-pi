@@ -17,7 +17,7 @@ steps:
   - title: Viète's method
   - title: Representing decimals on a computer
   - title: Monte Carlo method
-  - title: Dartboard algorithm — standalone processor
+  - title: Dartboard algorithm on a standalone processor
   - title: Comparing the two methods
-  - title: Dartboard algorithm — distributed system
+  - title: Dartboard algorithm on a distributed system
   - title: "Challenge: optimising the dartboard method"
