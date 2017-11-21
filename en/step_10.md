@@ -8,7 +8,7 @@ The code you have written passes a random seed to each job, so the entropy on th
 
 What was the best combination of job length and number of jobs?
 
-**Why does the accuracy seem to improve for some combinations of number of jobs and job length compared to others?**
+**Why does the accuracy seem to improve for some combinations of number of jobs and job length, but not others?**
 
 --- collapse ---
 ---
