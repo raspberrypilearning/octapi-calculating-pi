@@ -8,9 +8,9 @@ Your standalone dartboard program demonstrates that the function for running job
 
 ### Implementing on a distributed system
 
-In this implementation, we have M trials of `N` points so that the total number of points in the calculation of π is `M × N`.
+In this implementation, we have M trials of N points, so that the total number of points in the calculation of π is `M × N`.
 
-The calculation uses M random seeds (s) for each trial. The result of each trial, r<sub>i</sub>, is the number of points that were inside the circle for trial i. The overall result, R, is therefore the sum of all the individual trial results, r<sub>i</sub>, divided by the total number of points in the square, `M × N`. Here's how this can be written as a mathematical formula:
+The calculation uses M random seeds (s) for each trial. The result of each trial, r<sub>i</sub>, is the number of points that were inside the circle for trial i. The overall result, R, is therefore the sum of all the individual trial results divided by the total number of points in the square, `M × N`. Here's how this can be written as a mathematical formula:
 
 !["dartboard" calculation](images/dartboard-calculation.png)
 
@@ -18,7 +18,7 @@ This might look a bit scary, so let's break down what it means. This site has a 
 
  ![How the sigma works](images/dartboard-calculation1.png)
 
- This formula represents the steps you included when you wrote the dartboard program in the previous programming challenge:
+You included the following steps when you wrote the dartboard program in the previous programming challenge:
  - Ask for user inputs to define how many points (N) are tested in each trial, and how many trials (M) to run
  - Call the function you wrote M times, generating a new random seed for each time you call it
  - Add up the total values found 'inside' the circle
@@ -30,7 +30,7 @@ Now let's add the rest of the equation back in:
 Adding the rest of the formula back in adds the final part of the programming challenge:
  - Then calculate `π = (4 × total_inside) / (N × M)`.
 
-We have described it this way because this method allows us to break down a large number of trials into jobs that can, in theory, be run on many processors in parallel.
+We have described it this way because this method allows us to break down a large number of trials into jobs that can be run on many processors in parallel.
 
 ### Adapting the code
 
@@ -51,7 +51,7 @@ server_nodes ='192.168.1.\*'
 cluster = dispy.JobCluster(compute, nodes=server_nodes)
 ```
 
-This client code creates a `cluster` object using your `compute` function and points to servers on your network with the addresses specified.
+This client code creates a `cluster` object using your `compute` function and points to servers on your network with the specified addresses.
 
 + Copy the code asking the user to input the number of trials and jobs, but rename your `no_of_trials` variable to `no_of_jobs`. In this version, each trial will be a job run on the cluster.
 
@@ -71,7 +71,7 @@ for i in range(no_of_jobs):
     jobs.append(job)
 ```
 
-+ Finally, you need to collect the results from the jobs after they have completed, and calculate the total number of points that were inside the quarter circle.
++ Finally, you need to collect the results from the jobs after they have completed and calculate the total number of points that were inside the quarter circle.
 
 ```python
 total_inside = 0
@@ -81,7 +81,7 @@ for job in jobs:
     total_inside += inside
 ```
 
-+ Then, you can calculate the value of π, just as you did in the standalone version, except that you need to multiply `no_of_points` by `no_of_jobs`, as you have renamed the variable:
++ Then, you can calculate the value of π, just as you did in the standalone version, except that you need to multiply `no_of_points` by `no_of_jobs`, as you have renamed this variable:
 
 ```python
 total_no_of_points = no_of_points * no_of_jobs
@@ -102,4 +102,4 @@ Our version of this code is [here](resources/dartboard_octapi.py).
 --- /hint ---
 --- /hints ---
 
-This code works well for moderately-sized computations, but the client machine may run out of memory, as each job that is running requires storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
+This code works well for computations of moderate sizes, but the client machine may run out of memory, as each job that is running requires storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
