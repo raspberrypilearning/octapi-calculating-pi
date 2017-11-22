@@ -7,8 +7,7 @@ You can do this part of the resource on any computer able to run Python 3, inclu
 
 [[[generic-python-random-seed]]]
 
-- The function should generate that number of randomly chosen points and test each one to determine whether or not it falls inside the circle.
-- The function should count and return the number of randomly generated points which fell inside the circle.
+The function should generate that number of randomly chosen points and test each one to determine whether or not it falls inside the circle. It should also count and return the number of randomly generated points which fell inside the circle.
 
 [[[generic-python-simple-functions]]]
 
@@ -43,7 +42,7 @@ END FUNCTION
 
 --- /hint ---
 --- hint ---
-Here is a solution:
+Here's what your finished function might look like:
 ```python
 
 def compute(s, n):
@@ -70,19 +69,19 @@ Write a Python program that uses this function to calculate the value of π.
 
 - Include inputs to allow the user to type in how many points are tested in each trial (`N`) and the number of trials (`M`)
 - Call the function you wrote `M` times, generating a new random seed for each time you call it
-- Add up the total values found inside the circle
+- Add up the total number of points found inside the circle (`total_inside`)
 - Then calculate `π = (4 * total_inside) / (N * M)`
 
 --- hints ---
 --- hint ---
 You will need to use Python's `decimal` module to make sure you don't encounter problems with the precision of numbers you are able to store.
 
-1. Add the line `import decimal` at the start of your program
-1. Set up the precision with this line of code
+- Add the line `import decimal` at the start of your program
+- Set up the precision with this line of code:
     ```python
     decimal.getcontext().prec = 100
     ```
-1. When you calculate the estimated value of Pi, use the `Decimal` type from the `decimal` library
+- When you calculate the estimated value of Pi, use the `Decimal` type from the `decimal` library:
 
 ```python
 pi = decimal.Decimal( YOUR CALCULATION HERE )
