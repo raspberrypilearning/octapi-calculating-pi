@@ -1,6 +1,6 @@
 ## Viète's method
 
-In the 16th and 17th centuries, **infinite series methods** revolutionised the calculation of π: an infinitely long series of calculations is used to progressively generate a more and more accurate approximation of π. The first series discovered in Europe was an infinite product series found by French mathematician François Viète in 1593. It achieved 15 digits in only 25 **terms** (i.e. steps in the series).
+In the 16th and 17th centuries, the calculation of π was revolutionised by **infinite series methods**: an infinitely long series of calculations is used to progressively generate a more and more accurate approximation of π. The first series discovered in Europe was an infinite product series found by French mathematician François Viète in 1593. It achieved 15 digits in only 25 **terms** (i.e. steps in the series).
 
   ![François Viète product series](images/viete-product-series.png)
 
@@ -37,7 +37,7 @@ math.sqrt(16)
 
 You can check your code at this point by adding in a line to print the value of `answer` and checking that it equals `√2/2` or `0.7071067811865476`.
 
-You have now calculated the value of the first term of the infinite series. However, this will not be a very precise approximation of π. The more **iterations** (i.e. steps) of the series you perform, the more accurate the result becomes. Here are the first two terms in the infinite series:
+You have now calculated the value of the first term of the infinite series. However, this will not be a very precise approximation of π. The more **iterations** (i.e. terms) of the series you perform, the more accurate the result becomes. Here are the first two terms in the infinite series:
 
 ![Viete sequence highlighted in purple](images/viete-purple.png)
 
@@ -63,7 +63,7 @@ If you look at the next term of the sequence, you will see that this rule holds 
 
 [[[generic-python-for-loop]]]
 
-Notice that the end result of this calculation is equal to `2 / π`, but we want to know just the value of π.
+Notice that the end result of this calculation is equal to `2 / π`. We want to know just the value of π.
 
 + Rearrange this equation to obtain the value of π:
 
