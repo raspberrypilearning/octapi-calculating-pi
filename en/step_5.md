@@ -18,7 +18,7 @@ To understand why this is a particular problem when calculating an **irrational 
 
 [[[generic-theory-positive-integer-binary]]]
 
-If we were to extend the binary place value headers to the **right**, they would extend infinitely, with each new place value representing half the previous value:
+If we were to extend the binary place value headers to the **right**, they would stretch infinitely, with each new place value representing half the previous value:
 
 ![Binary fixed point](images/binary-fixed-point.png)
 
@@ -79,7 +79,7 @@ title: Answer
 ---
 In the previous example, we moved the floating point six places to the right. This meant that there was only one bit of the mantissa available to represent the fractional part of the number, so the highest precision available was the nearest `0.5`. Representing a fractional part with greater precision would require a larger mantissa and therefore more bits in which to store the number.
 
-If you do a calculation in Python and the result has a greater degree of precision than the number of bits available, it will be rounded. This is what causes the Viète program to become more and more unreliable — there are not enough bits to store the increasingly precise value of π.
+If you do a calculation in Python and the result has a greater degree of precision than the number of bits available, it will be rounded. This is what causes the result Viète program to become more and more similar — there are not enough bits to store the increasingly precise value of π.
 
 --- /collapse ---
 
@@ -95,7 +95,9 @@ As we said earlier, the decimal part of an **irrational number** is infinitely l
 
 Using the Python `decimal` module addresses this problem, because it allows you to specifiy arbitrary precision (or more accurately, user-defined integer precision). However, the precision is still limited by the amount of available memory. In other words, you can only specify finite precision: `getcontext().prec('x')`, where `x` is a finite integer.
 
-As an extension task, you could use the [`decimal` module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal){:target="_blank"} to improve the accuracy of your program. Can you achieve 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
++ As an extension task, you could use the [`decimal` module](https://docs.python.org/3/library/decimal.html?highlight=decimal#module-decimal){:target="_blank"} to improve the accuracy of your program.
+
+Can you achieve 15 digits of accuracy after 25 iterations? How many terms in the series can you reach before accuracy is lost?
 
 Take a look at our [example program](resources/pi_viete.py) to see an implementation of the Viète infinite product series using Python's `decimal` module.
 
