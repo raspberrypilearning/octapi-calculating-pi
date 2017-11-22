@@ -44,13 +44,15 @@ Here is how we will determine whether a randomly generated point lies inside the
 
 _Adapted from original image by nicoguaro [CC BY 3.0](http://creativecommons.org/licenses/by/3.0), via Wikimedia Commons_
 
-Let's look at an example:
+Let's look at the example from the image above:
 
-- We know that `x = 0.6` and `y = 0.4` for our randomly generated point (see image above).
+- For our randomly generated point `x = 0.6` and `y = 0.4`.
 - The radius of the circle is `1`.
 - We need to find the distance of the example point from the axis point `x = 0, y = 0` — we'll call this the **radius `r`**.
-- Pythagoras' theorem tells us that `r² = x² + y²`.
-- Plug the values of `x` and `y` into the equation: `r² = 0.6² + 0.4² = 0.36 + 0.16 = 0.52`.
+- Pythagoras' theorem tells us that `r² = x² + y²`. Plug the values of `x` and `y` into the equation:
+
+`r² = 0.6² + 0.4² = 0.36 + 0.16 = 0.52`
+
 - To get the value of `r`, we would normally need to take the square root of the result of the equation. However, we know the circle we are comparing against has a radius of `1`. So the circle's `r² = 1² = 1`. Therefore, we can just skip taking the square root of our result altogether. 
 - If the result is less than `1`, the point is inside the circle. If it is `1` or greater, the point is outside the circle.
 
