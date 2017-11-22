@@ -21,7 +21,7 @@ This resource covers elements from the following strands of the [Raspberry Pi Di
 
 ### Licence
 
-OctaPi: calculating Pi by [GCHQ](https://www.gchq.gov.uk/){:target="_blank"} and the Raspberry Pi Foundation is licensed under a Creative Commons Attribution 4.0 International Licence.
+_OctaPi: calculating Pi_ by [GCHQ](https://www.gchq.gov.uk/){:target="_blank"} and the Raspberry Pi Foundation is licensed under a Creative Commons Attribution 4.0 International Licence.
 Based on a work at [github.com/raspberrypilearning/octapi-calculating-pi](https://github.com/raspberrypilearning/octapi-calculating-pi).
 
 **Code and scripts copyright:**
