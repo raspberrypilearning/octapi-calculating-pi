@@ -12,8 +12,6 @@ Due to the mathematical nature of π, it's hard to use its actual value in accur
 
 ![Calculating Pi table](images/calculating-pi-table.png)
 
-Finding the value of π is important for science and engineering, but it is also an intellectual puzzle that has entertained mathematicians for centuries.
-
 ### What you will learn
 This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum){:target="_blank"}:
 
