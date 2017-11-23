@@ -1,6 +1,6 @@
 ## Viète's method
 
-In the 16th and 17th centuries, the calculation of π was revolutionised by **infinite series methods**: an infinitely long series of calculations is used to progressively generate a more and more accurate approximation of π. The first series discovered in Europe was an infinite product series found by French mathematician François Viète in 1593. It achieved 15 digits in only 25 **terms** (i.e. steps in the series).
+In the 16th and 17th centuries, the calculation of π was revolutionised by **infinite series methods**, in which infinitely long series of calculations are used to progressively generate a more and more accurate approximation of π. The first series discovered in Europe was an infinite product series found by French mathematician François Viète in 1593. It achieved 15 digits in only 25 **terms** (i.e. steps in the series).
 
   ![François Viète product series](images/viete-product-series.png)
 
@@ -73,7 +73,7 @@ Notice that the end result of this calculation is equal to `2 / π`. We want to 
 --- hint ---
 Here is some pseudocode to help you write your program:
 
-```
+```Python
 SET purple = √2
 SET answer = purple/2
 
