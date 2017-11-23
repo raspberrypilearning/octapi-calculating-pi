@@ -14,21 +14,22 @@ The calculation uses M random seeds (s) for each trial. The result of each trial
 
 !["dartboard" calculation](images/dartboard-calculation.png)
 
-This might look a bit scary, so let's break down what it means. This site has a [good explanation of sigma (the Σ symbol)](https://www.mathsisfun.com/algebra/sigma-notation.html){:target="_blank"}. Σ indicates that we have to sum up whatever comes after it.
+This might look a bit scary, so let's break down what it means. This site has a [good explanation of sigma (the Σ symbol)](https://www.mathsisfun.com/algebra/sigma-notation.html){:target="_blank"}. The Σ just tells us that we have to sum up whatever comes after it.
 
  ![How the sigma works](images/dartboard-calculation1.png)
 
 You included the following steps when you wrote the dartboard program in the previous programming challenge:
  - Ask for user inputs to define how many points (N) are tested in each trial, and how many trials (M) to run
  - Call the function you wrote M times, generating a new random seed for each time you call it
- - Add up the total values found 'inside' the circle
+ - Add up the total number of points found inside the circle (this is the Σ bit)
 
 Now let's add the rest of the equation back in:
 
   ![Final equation](images/dartboard-calculation2.png)
 
-Adding the rest of the formula back in adds the final part of the programming challenge:
- - Then calculate `π = (4 × total_inside) / (N × M)`.
+Doing so adds the final part of the programming challenge.
+
+ - Rearrange it to calculate `π = (4 × total_inside) / (N × M)`.
 
 We have described it this way because this method allows us to break down a large number of trials into jobs that can be run on many processors in parallel.
 
@@ -102,4 +103,4 @@ Our version of this code is [here](resources/dartboard_octapi.py).
 --- /hint ---
 --- /hints ---
 
-This code works well for computations of moderate sizes, but the client machine may run out of memory, as each job that is running requires storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
+This code works well for computations of moderate sizes, but the client machine may run out of memory, as each running job takes up storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
