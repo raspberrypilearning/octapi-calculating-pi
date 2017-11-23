@@ -2,7 +2,10 @@
 
 ### Hardware
 - A Raspberry Pi, or any other computer capable of running Python 3
-- OctaPi (for some parts of the resource)
+
+and/or
+
+- An OctaPi (for some parts of the resource)
 
 ### Software
 - Python 3
