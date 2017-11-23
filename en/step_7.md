@@ -90,20 +90,22 @@ pi = decimal.Decimal( YOUR CALCULATION HERE )
 --- hint ---
 Here is some pseudocode to help you:
 
-**INPUT** number of points
-**INPUT** number of trials
-**SET** total inside = 0
+```python
+INPUT number of points
+INPUT number of trials
+SET total inside = 0
 
-**FOR** i **FROM** 0 **TO** number of trials
-...**GENERATE** random seed
-...**CALL** compute(seed, number of points)
-...**ADD** result to total inside
+FOR i FROM 0 TO number of trials
+    GENERATE random seed
+    CALL compute(seed, number of points)
+    ADD result to total inside
 
-**SET** total points = number of points * number of trials
+SET total points = number of points * number of trials
 
-**CALCULATE** 4 * total inside / total points
+CALCULATE 4 * total inside / total points
 
-**PRINT** result
+PRINT result
+```
 
 --- /hint ---
 
