@@ -51,8 +51,8 @@ To convert a denary number to floating-point binary:
 + Write the whole part in binary, followed by a point, e.g. `011`
 + After the whole part, write the fractional part in binary, e.g. `011.0010`
 + Move the point all the way to the left, counting how many places it is moved
-+ The number of places moved is the exponent, which you write in four bits at the end — `.011 0010 0011`
-+ Before the point, add a sign bit to determine whether the number is positive or negative — `0.01100100011`
++ The number of places moved is the exponent, which you write in four bits at the end, e.g. `.011 0010 0011`
++ Before the point, add a sign bit to determine whether the number is positive or negative, e.g. `0.01100100011`
 
 **Convert the number `0.10000110110` into denary**
 
@@ -77,7 +77,7 @@ The result is `33.5`.
 ---
 title: Answer
 ---
-In the previous example, we moved the floating point six places to the right. This meant that there was only one bit of the mantissa available to represent the fractional part of the number, so the highest precision available was the nearest `0.5`. Representing a fractional part with greater precision would require a larger mantissa and therefore more bits in which to store the number.
+In the previous example, we moved the floating point six places to the right. This meant that there was only one bit of the mantissa available to represent the fractional part of the number, so the most precise value available was the nearest `0.5`. Representing a fractional part with greater precision would require a larger mantissa and therefore more bits in which to store the number.
 
 If you do a calculation in Python and the result has a greater degree of precision than the number of bits available, it will be rounded. This is what causes the result Viète program to become more and more similar — there are not enough bits to store the increasingly precise value of π.
 
