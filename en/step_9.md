@@ -27,11 +27,11 @@ Now let's add the rest of the equation back in:
 
   ![Final equation](images/dartboard-calculation2.png)
 
-Doing so adds the final part of the programming challenge.
+Doing so adds the final part of the previous programming challenge:
 
- - Rearrange it to calculate `π = (4 × total_inside) / (N × M)`.
+ - The equation can be rearranged to calculate `π = (4 × total_inside) / (N × M)`.
 
-We have described it this way because this method allows us to break down a large number of trials into jobs that can be run on many processors in parallel.
+We use this method because it allows us to break down a large number of trials into jobs that can be run on many processors in parallel.
 
 ### Adapting the code
 
