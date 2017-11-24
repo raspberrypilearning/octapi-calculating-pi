@@ -31,7 +31,7 @@ Doing so adds the final part of the previous programming challenge:
 
  - The equation can be rearranged to calculate `π = (4 × total_inside) / (N × M)`.
 
-We use this method because it allows us to break down a large number of trials by giving each trial as a job to one of the OctaPi servers, so the algorithm can be run on many processors in parallel.
+We use this method because it allows us to break down a large number of trials: by giving each trial as a job to one of the OctaPi servers, the algorithm can run on many processors in parallel.
 
 ### Adapting the code
 
