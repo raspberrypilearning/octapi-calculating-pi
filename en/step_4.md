@@ -6,7 +6,7 @@ In the 16th and 17th centuries, the calculation of π was revolutionised by **in
 
 Let's take a closer look at this equation. Once you break it down into smaller parts, it becomes much easier to understand, and you'll be able to work out how to calculate it using a computer program. The dots between the fractions just mean **multiply**.
 
-+ Open IDLE and create a new Python file.
++ Open IDLE and create a new Python file. Call it `viete.py`.
 
     [[[rpi-gui-idle-opening]]]
 
@@ -37,7 +37,7 @@ math.sqrt(16)
 
 You can check your code at this point by adding in a line to print the value of `answer` and checking that it equals `√2/2` or `0.7071067811865476`.
 
-You have now calculated the value of the first term of the infinite series. However, this will not be a very precise approximation of π. The more **iterations** (i.e. terms) of the series you perform, the more accurate the result becomes. Here are the first two terms in the infinite series:
+You have now calculated the value of the first term of the infinite series. However, this will not be a very precise approximation of 2/π. The more **iterations** (i.e. terms) of the series you perform, the more accurate the result becomes. Here are the first two terms in the infinite series:
 
 ![Viete sequence highlighted in purple](images/viete-purple.png)
 
