@@ -91,7 +91,7 @@ In Python, floating-point numbers are stored in 64 bits — as standard double-p
 ---
 title: Answer
 ---
-As we said earlier, the decimal part of an **irrational number** is infinitely long and never repeats. Sp we can never accurately store the value of π in a variable in Python because that would require an infinite number of bits!
+As we said earlier, the decimal part of an **irrational number** is infinitely long and never repeats. We can never accurately store the value of π in a variable in Python because that would require an infinite number of bits!
 
 Using the Python `decimal` module addresses this problem, because it allows you to specifiy arbitrary precision (or more accurately, user-defined integer precision). However, the precision is still limited by the amount of available memory. In other words, you can only specify finite precision: `getcontext().prec('x')`, where `x` is a finite integer.
 

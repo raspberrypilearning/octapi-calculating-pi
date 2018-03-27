@@ -11,8 +11,8 @@ Many people think that the value of π can be calculated by dividing `22/7`. How
 title: Answer
 ---
 There are lots of irrational numbers — two of the most commonly encountered ones are:
-- `√2 = 1.4142135623730950488...`, the first number to be confirmed as irrational
-- Euler's number e, the base value used in natural logarithms `e = 2.71828182845904523536028747135266249775724709369995...`
+- [root 2](https://en.wikipedia.org/wiki/Square_root_of_2) `√2 = 1.4142135623730950488...`, the first number to be confirmed as irrational
+- [Euler's number e](https://en.wikipedia.org/wiki/E_(mathematical_constant)), the base value used in natural logarithms `e = 2.71828182845904523536028747135266249775724709369995...`
 
 --- /collapse ---
 
