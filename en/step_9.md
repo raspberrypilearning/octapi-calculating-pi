@@ -41,6 +41,13 @@ Reuse some of the **dartboard code from the previous challenge**, and adapt it t
 
 + Copy the `compute` function from your standalone program into this file.
 
++ The `compute` function will be sent to the servers, so it needs to import any modules it uses. Add in an `import random` line at the start of the function.
+
+```python
+def compute(s, n):
+	import random
+```
+
 You need to add code to create a `Dispy` cluster on your OctaPi network to run your `compute` function.
 
 + Below the function, add some code to import the libraries and set up your cluster.

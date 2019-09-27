@@ -16,9 +16,10 @@
 # All other original code: Crown Copyright 2016, 2017
 
 # 'compute' is the core calculation
+import random, decimal, dispy, socket
+
 def compute(s, n):
     import random
-
     inside = 0
     random.seed(s)
 
@@ -33,10 +34,13 @@ def compute(s, n):
 
     return(inside)
 
-import random, decimal, dispy
+
 
 server_nodes ='192.168.1.\*'
-cluster = dispy.JobCluster(compute, nodes=server_nodes)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80))
+cluster = dispy.JobCluster(compute, ip_addr=s.getsockname()[0], nodes=server_nodes)
+
 
 # Input the number of trials to run and the size of each trial
 no_of_points = int( input('Number of random points to include in each trial = ') )
