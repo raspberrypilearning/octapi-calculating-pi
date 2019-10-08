@@ -41,15 +41,24 @@ Reuse some of the **dartboard code from the previous challenge**, and adapt it t
 
 + Copy the `compute` function from your standalone program into this file.
 
++ The `compute` function will be sent to the servers, so it needs to import any modules it uses. Add an `import random` line at the start of the function.
+
+```python
+def compute(s, n):
+	import random
+```
+
 You need to add code to create a `Dispy` cluster on your OctaPi network to run your `compute` function.
 
 + Below the function, add some code to import the libraries and set up your cluster.
 
 ```python
-import random, decimal, dispy
+import random, decimal, dispy, socket
 
 server_nodes ='192.168.1.\*'
-cluster = dispy.JobCluster(compute, nodes=server_nodes)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80)) 
+cluster = dispy.JobCluster(compute, ip_addr=s.getsockname()[0], nodes=server_nodes)
 ```
 
 This client code creates a `cluster` object using your `compute` function and points to servers on your network with the specified addresses.
