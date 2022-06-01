@@ -18,13 +18,15 @@ last_tested: 2017-12-01
 steps:
 - title: Introduction
 - title: What you will need
-  completion: engaged
 - title: Why is calculating π difficult?
 - title: Viète's method
+  completion:
+  - engaged
 - title: Representing decimals on a computer
 - title: Dartboard method
 - title: Dartboard algorithm on a standalone processor
 - title: Comparing the two methods
 - title: Dartboard algorithm on the OctaPi
-  completion: internal
+  completion:
+  - internal
 - title: 'Challenge: optimising the dartboard method'
