@@ -30,3 +30,5 @@ steps:
   completion:
   - internal
 - title: 'Challenge: optimising the dartboard method'
+  completion:
+  - external
