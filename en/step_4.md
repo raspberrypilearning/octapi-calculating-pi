@@ -18,13 +18,6 @@ Each term in the infinite series looks a bit like what you see below. You might 
 
 --- hints ---
 --- hint ---
-To find the square root of a number in Python, you will need to import the `math` library at the start of your program:
-
-```python
-import math
-```
---- /hint ---
---- hint ---
 You can find the square root of a number using `math.sqrt()`. For example, here is code which will calculate the square root of 16:
 
 ```python
@@ -32,6 +25,7 @@ math.sqrt(16)
 ```
 --- /hint ---
 --- /hints ---
+
 
 + Create another variable called `answer` and set it to the value of the whole first term in the sequence — this will be the `purple` variable divided by 2.
 
@@ -71,22 +65,6 @@ Notice that the end result of this calculation is equal to `2 / π`. We want to 
 
 --- hints ---
 --- hint ---
-Here is some pseudocode to help you write your program:
-
-```Python
-SET purple = √2
-SET answer = purple/2
-
-FOR i FROM 1 TO 25 DO
-    SET purple = √ (2 + purple)
-    SET answer = answer * (purple / 2)
-    PRINT 2 / answer
-END FOR
-
-```
-
---- /hint ---
---- hint ---
 Here is a solution in Python:
 
 ```Python
@@ -104,5 +82,5 @@ for i in range(25):
 
 ```
 --- /hint ---
-
 --- /hints ---
+

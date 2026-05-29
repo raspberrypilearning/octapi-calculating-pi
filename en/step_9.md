@@ -112,4 +112,5 @@ Our version of this code is [here](resources/dartboard_octapi.py).
 --- /hint ---
 --- /hints ---
 
+
 This code works well for computations of moderate sizes, but the client machine may run out of memory, as each running job takes up storage space on it. There is a technique to drip-feed jobs to the cluster shown in the `Dispy` documentation. A version of the same code using this more efficient method can be found [here](resources/compute_pi_efficient.py).
