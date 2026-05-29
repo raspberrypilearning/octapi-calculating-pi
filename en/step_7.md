@@ -13,35 +13,6 @@ The function should generate that number of randomly chosen points and test each
 
 --- hints ---
 --- hint ---
-You will need to `import random` inside your function. Then you can generate the random numbers you need using `random.uniform()`.
---- /hint ---
---- hint ---
-Here is some pseudocode for a function which randomly generates points using a fixed random seed.
-
-```python
-FUNCTION compute(seed, number_of_points)
-
-    SET RANDOM SEED = seed
-    SET inside = 0
-
-    FOR i FROM 0 to number_of_points
-        SET x = RANDOM NUMBER 0.0 TO 1.0
-        SET y = RANDOM NUMBER 0.0 TO 1.0
-        SET result = x*x + y*y
-
-        IF result < 1
-            SET inside = inside + 1
-        END IF
-
-    END FOR
-
-    RETURN inside
-
-END FUNCTION
-```
-
---- /hint ---
---- hint ---
 Here's what your finished function might look like:
 ```python
 
@@ -64,6 +35,7 @@ def compute(s, n):
 --- /hint ---
 --- /hints ---
 
+
 ### Challenge: calculate π using your function
 Write a Python program that uses this function to calculate the value of π.
 
@@ -73,42 +45,6 @@ Write a Python program that uses this function to calculate the value of π.
 - Then calculate `π = (4 * total_inside) / (N * M)`
 
 --- hints ---
---- hint ---
-You will need to use Python's `decimal` module to make sure you don't encounter problems with the precision of numbers you are able to store.
-
-- Add the line `import decimal` at the start of your program
-- Set up the precision with this line of code:
-    ```python
-    decimal.getcontext().prec = 100
-    ```
-- When you calculate the estimated value of Pi, use the `Decimal` type from the `decimal` library:
-
-```python
-pi = decimal.Decimal( YOUR CALCULATION HERE )
-```
---- /hint ---
---- hint ---
-Here is some pseudocode to help you:
-
-```python
-INPUT number of points
-INPUT number of trials
-SET total inside = 0
-
-FOR i FROM 0 TO number of trials
-    GENERATE random seed
-    CALL compute(seed, number of points)
-    ADD result to total inside
-
-SET total points = number of points * number of trials
-
-CALCULATE 4 * total inside / total points
-
-PRINT result
-```
-
---- /hint ---
-
 --- hint ---
 Here is how your code might look:
 
@@ -152,3 +88,4 @@ print(('The value of Pi is estimated to be %s using %s points' % (+Pi, total_no_
 You can see our complete finished code [here](resources/pi_dartboard.py).
 --- /hint ---
 --- /hints ---
+
