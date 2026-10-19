@@ -22,12 +22,12 @@ def compute(s, n):
     inside = 0
     random.seed(s)
 
-    for i in range(n)
+    for i in range(n):
         # compute position of the point
         x = random.uniform(0.0, 1.0)
         y = random.uniform(0.0, 1.0)
         result = x*x + y*y
-        if (result <= 1.0)
+        if (result <= 1.0):
             inside += 1
 
     return(inside)
